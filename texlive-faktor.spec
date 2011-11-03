@@ -1,3 +1,9 @@
+# revision 15878
+# category Package
+# catalog-ctan /macros/latex/contrib/faktor
+# catalog-date 2007-02-27 14:19:10 +0100
+# catalog-license lppl
+# catalog-version 0.1b
 Name:		texlive-faktor
 Version:	0.1b
 Release:	1
@@ -47,6 +53,7 @@ sizes do not change in the \faktor command.
 #- source
 %doc %{_texmfdistdir}/source/latex/faktor/faktor.dtx
 %doc %{_texmfdistdir}/source/latex/faktor/faktor.ins
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -57,3 +64,5 @@ sizes do not change in the \faktor command.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
