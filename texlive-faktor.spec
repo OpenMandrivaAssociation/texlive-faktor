@@ -53,3 +53,17 @@ sizes do not change in the \faktor command.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
+
+
+%changelog
+* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 0.1b-2
++ Revision: 751753
+- Rebuild to reduce used resources
+
+* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 0.1b-1
++ Revision: 718410
+- texlive-faktor
+- texlive-faktor
+- texlive-faktor
+- texlive-faktor
+
