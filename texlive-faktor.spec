@@ -6,7 +6,7 @@
 # catalog-version 0.1b
 Name:		texlive-faktor
 Version:	0.1b
-Release:	7
+Release:	8
 Summary:	Typeset quotient structures with LaTeX
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/faktor
