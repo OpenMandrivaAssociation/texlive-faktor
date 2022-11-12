@@ -1,19 +1,13 @@
-# revision 15878
-# category Package
-# catalog-ctan /macros/latex/contrib/faktor
-# catalog-date 2007-02-27 14:19:10 +0100
-# catalog-license lppl
-# catalog-version 0.1b
 Name:		texlive-faktor
-Version:	0.1b
-Release:	11
+Version:	15878
+Release:	1
 Summary:	Typeset quotient structures with LaTeX
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/faktor
 License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/faktor.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/faktor.doc.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/faktor.source.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/faktor.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/faktor.doc.r%{version}.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/faktor.source.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -28,12 +22,12 @@ most obvious difference is that the numerator and denominator's
 sizes do not change in the \faktor command.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -46,24 +40,11 @@ sizes do not change in the \faktor command.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1 -a2
+%setup -c -a1 -a2
+%autopatch -p1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 0.1b-2
-+ Revision: 751753
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 0.1b-1
-+ Revision: 718410
-- texlive-faktor
-- texlive-faktor
-- texlive-faktor
-- texlive-faktor
-
